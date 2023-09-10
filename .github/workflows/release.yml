@@ -45,7 +45,7 @@ jobs:
       - name: Create a new issue if release exists
         if: env.exists == 'true'
         run: |
-          gh issue create --title "Release $VERSION already exists" --body "The release for version $VERSION already exists. Please review and take appropriate action." --label "release"
+          gh issue create --title "Release $VERSION already exists" --body "The release for version $VERSION already exists. Please review and take appropriate action."
 
       - name: gh release create
         if: env.exists == 'false' && (env.RELEASE_TYPE == 'final' || env.RELEASE_TYPE == 'post')
