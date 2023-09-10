@@ -4,7 +4,7 @@ build-backend = "poetry.core.masonry.api"
 
 [tool.poetry]
 name = "bump-version"
-version = "0.0.1a4"
+version = "0.0.1"
 description = "Version-bump your software with a single command"
 authors = [ "Azat <8280770+azataiot@users.noreply.github.com>",]
 readme = "README.md"
@@ -19,9 +19,9 @@ tests = [ "B201", "B301",]
 skips = [ "B101", "B601",]
 
 [tool.bump-version]
-dry-run = true
-commit = false
-tag = false
+dry-run = false
+commit = true
+tag = true
 
 [tool.poetry.scripts]
 bv = "src.cli:app"
