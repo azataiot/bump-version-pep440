@@ -25,8 +25,9 @@ jobs:
       - name: Get version from pyproject.toml
         id: get_version
         run: |
-          version=$(awk -F' = ' '/^version/ { gsub(/"/, "", $2); print $2 }' pyproject.toml)
+          version=$(awk -F' = ' '/^version/ { gsub(/["^]/, "", $2); print $2 }' pyproject.toml)
           echo "version=$version" >> $GITHUB_ENV
+
 
       - name: Create GitHub Release with auto-generated notes
         run: |
