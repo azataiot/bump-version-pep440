@@ -3,8 +3,8 @@ requires = [ "poetry-core",]
 build-backend = "poetry.core.masonry.api"
 
 [tool.poetry]
-name = "bump-version"
-version = "0.0.3"
+name = "bump-version-pep440"
+version = "0.0.3.post1"
 description = "Version-bump your software with a single command"
 authors = [ "Azat <8280770+azataiot@users.noreply.github.com>",]
 readme = "README.md"
