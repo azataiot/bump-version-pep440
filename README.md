@@ -3,7 +3,7 @@
 [![Code Quality](https://github.com/azataiot/python-project-template/actions/workflows/code-quality.yml/badge.svg)](https://github.com/azataiot/python-project-template/actions/workflows/code-quality.yml)
 [![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit)](https://github.com/pre-commit/pre-commit)
 [![security: bandit](https://img.shields.io/badge/security-bandit-yellow.svg)](https://github.com/PyCQA/bandit)
-[![latest release](https://img.shields.io/github/v/release/azataiot/python-project-template)](https://github.com/azataiot/python-project-template/releases)
+[![latest release](https://img.shields.io/github/v/release/azataiot/bump-version)](https://github.com/azataiot/bump-version/releases)
 
 **Introduction**: This project is heavily inspired by [bumpversion](https://github.com/peritus/bumpversion), yet this is
 a different package with a different approach and design.
