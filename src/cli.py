@@ -1,11 +1,17 @@
-# src/cli.py
 from typing import Optional
 
+import toml
 import typer
 
 from .bump_version import bump_version
 
 app = typer.Typer()
+
+# Load the default configuration from pyproject.toml
+try:
+    config = toml.load("pyproject.toml")["tool"]["bump-version"]
+except (FileNotFoundError, KeyError):
+    config = {}
 
 
 @app.command()
@@ -16,7 +22,7 @@ def bump(
         "--current-version",
         "-c",
         help="Current version to be used instead of reading from pyproject.toml.",
-    ),  # noqa: E501
+    ),
     new_version: Optional[str] = typer.Option(
         None,
         "--new-version",
@@ -24,15 +30,21 @@ def bump(
         help="New version to be set instead of incrementing the current version.",
     ),
     commit: bool = typer.Option(
-        False, "--commit", help="If set, a git commit will be created."
+        config.get("commit", False),
+        "--commit",
+        help="If set, a git commit will be created.",
     ),
     commit_message: Optional[str] = typer.Option(
         None, "--commit-message", help="Custom commit message."
     ),
     dry_run: bool = typer.Option(
-        False, "--dry-run", help="If set, no actual changes will be made, only printed."
+        config.get("dry-run", False),
+        "--dry-run",
+        help="If set, no actual changes will be made, only printed.",
     ),
-    tag: bool = typer.Option(False, "--tag", help="If set, a git tag will be created."),
+    tag: bool = typer.Option(
+        config.get("tag", False), "--tag", help="If set, a git tag will be created."
+    ),
     tag_name: Optional[str] = typer.Option(None, "--tag-name", help="Custom tag name."),
 ):
     """
