@@ -55,4 +55,4 @@ jobs:
       - name: gh release create
         if: env.exists == 'false' && (env.RELEASE_TYPE == 'final' || env.RELEASE_TYPE == 'post')
         run: |
-          gh release create --draft --generate-notes --title "Release $VERSION" "$VERSION"
+          gh release create --generate-notes --title "Release $VERSION" "$VERSION"
