@@ -45,7 +45,7 @@ install: ensure-poetry
 	poetry install
 
 ## Update dependencies
-showdeps: ## run poetry to show deps
+showdeps: ensure-poetry
 	@echo "CURRENT:"
 	poetry show --tree
 	@echo
