@@ -1,4 +1,4 @@
-# bump-version
+# bump-version-pep440
 
 [![Code Quality](https://github.com/azataiot/python-project-template/actions/workflows/code-quality.yml/badge.svg)](https://github.com/azataiot/python-project-template/actions/workflows/code-quality.yml)
 [![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit)](https://github.com/pre-commit/pre-commit)
@@ -10,10 +10,37 @@ a different package with a different approach and design.
 
 ## Usage
 
-### Quick Start /TODO
+### Quick Start
 
+```bash
+poetry add bump-version-pep440
+```
 
-### CLI Usage /TODO
+### CLI Usage
+
+```bash
+❯ poetry run bv --help
+
+ Usage: bv [OPTIONS] VERSION_TYPE
+
+ Bump the version based on the provided version type and other parameters.
+
+╭─ Arguments ───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╮
+│ *    version_type      TEXT  [default: None] [required]                                                                                                                                               │
+╰───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+╭─ Options ─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╮
+│ --current-version     -c      TEXT  Current version to be used instead of reading from pyproject.toml. [default: None]                                                                                │
+│ --new-version         -n      TEXT  New version to be set instead of incrementing the current version. [default: None]                                                                                │
+│ --commit                            If set, a git commit will be created. [default: True]                                                                                                             │
+│ --commit-message              TEXT  Custom commit message. [default: None]                                                                                                                            │
+│ --dry-run                           If set, no actual changes will be made, only printed.                                                                                                             │
+│ --tag                               If set, a git tag will be created. [default: True]                                                                                                                │
+│ --tag-name                    TEXT  Custom tag name. [default: None]                                                                                                                                  │
+│ --install-completion                Install completion for the current shell.                                                                                                                         │
+│ --show-completion                   Show completion for the current shell, to copy it or customize the installation.                                                                                  │
+│ --help                              Show this message and exit.                                                                                                                                       │
+╰───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+```
 
 ## Branching Strategy
 
