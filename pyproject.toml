@@ -9,6 +9,7 @@ description = "Version-bump your software with a single command"
 authors = [ "Azat <8280770+azataiot@users.noreply.github.com>",]
 readme = "README.md"
 exclude = [ "tests",]
+homepage = "https://github.com/azataiot/bump-version-pep440"
 [[tool.poetry.packages]]
 include = "src"
 from = "."
